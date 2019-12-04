@@ -13,7 +13,8 @@ import com.nexmo.client.verify.CheckResponse;
 public class App {
 
   static String API_KEY = "YOUR_API_KEY";
-  static String API_SECRET = "YOUR_API_SECRET";
+  static String API_SECRET = "YOUR_API_KEY";
+  static String number = "";
   static String requestId = "";
 
   public static void main(String[] args) {
@@ -28,7 +29,7 @@ public class App {
     }, new HandlebarsTemplateEngine());
 
     post("/register", (request, response) -> {
-      String number = request.queryParams("number");
+      number = request.queryParams("number");
 
       VerifyResponse verifyResponse = client.getVerifyClient().verify(number, "NEXMO");
       if (verifyResponse.getStatus() == VerifyStatus.OK) {
@@ -55,6 +56,7 @@ public class App {
         model.put("status", "Verification Failed");
         System.out.println("Verification failed: " + checkResponse.getErrorText());
       }
+      model.put("number", number);
 
       return new ModelAndView(model, "result.hbs");
     }, new HandlebarsTemplateEngine());
