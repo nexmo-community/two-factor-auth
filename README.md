@@ -1,14 +1,23 @@
-# 2FA Example using Java/Spark and the Verify API
+# ⚠️ This repository is no longer maintained.
+
+<img src="https://developer.nexmo.com/assets/images/Vonage_Nexmo.svg" height="48px" alt="Nexmo is now known as Vonage" />
+
+## Support Notice
+This is an archived repository. If you have any questions, feel free to reach out to us at devrel@vonage.com or through our Community Slack at https://developer.vonage.com/community/slack.
+
+<hr />
+
+## 2FA Example using Java/Spark and the Verify API
 
 This is the source code to accompany the [How to Add Two-Factor Authentication with Java and Spark blog post]()
 
-## Setup
+### Setup
 
 1. Clone the repository
 2. Replace `YOUR_API_KEY` and `YOUR_API_SECRET` in `src/main/java/two/factor/auth/App.java` with your own Nexmo API key and secret from the [Developer Dashboard](https://dashboard.nexmo.com)
 3. Execute `gradle run`
 
-## Run it
+### Run it
 
 1. Visit `http://localhost:3000` in your browser
 2. Enter your cell phone number with the international dialing code but omit the `+` symbol and any leading zeros
